@@ -1,4 +1,4 @@
-.PHONY: sync kernel compose-up jupyter streamlit services format lint ci clean
+.PHONY: sync kernel compose-up-elastic jupyter streamlit services format lint ci clean run-vector-search
 
 sync:
 	uv sync
@@ -8,13 +8,16 @@ kernel:
 		--env VIRTUAL_ENV "$(CURDIR)/.venv" \
 		--name llm-rag-workshop
 
-compose-up:
-	docker compose up --build
+compose-up-elastic:
+	docker compose -f docker-compose.elastic-search.yml up --build
+
+compose-up-vector:
+	docker compose -f docker-compose.vector-search.yml up --build
 
 jupyter:
 	uv run --with jupyter jupyter lab
 
-services: compose-up jupyter
+services: compose-up-elastic jupyter
 
 streamlit:
 	uv run --with streamlit streamlit run packages/llm-rag-workshop/src/llm_rag_workshop/app.py
@@ -30,3 +33,6 @@ ci: lint
 
 clean:
 	find . -type d -name "__pycache__" -exec rm -rf {} +
+
+run-vector-search:
+	uv run python -m vector_search.app

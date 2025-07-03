@@ -25,10 +25,14 @@ make streamlit
 
 ![Streamlit RAG Q&A](images/streamlit-rag.png)
 
-## Troubleshooting
+### Troubleshooting
 
 If you need to troubleshoot then viewing the elastic search logs will be very helpful
 
 ```bash
 docker compose logs -f elasticsearch
 ```
+
+##  Vector Search
+
+[Vector Search Readme](./packages/vector_search/README.md)
