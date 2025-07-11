@@ -10,6 +10,7 @@ requires-python = ">=3.13"
 dependencies = [
     "accelerate>=1.7.0",
     "bitsandbytes-cuda116>=0.26.0.post2",
+    "dlt>=1.13.0",
     "elasticsearch>=9.0.1",
     "fastembed>=0.7.0",
     "langchain>=0.3.25",
