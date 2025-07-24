@@ -18,6 +18,7 @@
   "python.analysis.extraPaths": [
     "packages/llm-rag-workshop/src",
     "packages/vector_search/src",
+    "./packages/vector_search/src/vector_search/notebooks"
   ],
   "makefile.configureOnOpen": false
 }

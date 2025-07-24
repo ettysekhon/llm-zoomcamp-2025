@@ -2,7 +2,11 @@
 name = "llm-zoomcamp-2025"
 version = "0.1.0"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "markdown>=3.8.2",
+    "minsearch>=0.0.4",
+    "openai>=1.82.1",
+]
 
 [tool.uv.workspace]
 members = ["packages/*"]

@@ -1,4 +1,4 @@
-.PHONY: sync kernel compose-up-elastic jupyter streamlit services format lint ci clean run-vector-search
+.PHONY: sync kernel compose-up-elastic jupyter streamlit services format lint ci clean run-vector-search run-agents-homework run-mcp-server run-mcp-client
 
 sync:
 	uv sync
@@ -36,3 +36,12 @@ clean:
 
 run-vector-search:
 	uv run python -m vector_search.app
+
+run-agents-homework:
+	uv run python -m vector_search.agents-homework
+
+run-mcp-server:
+	uv run python -m vector_search.weather_server
+
+run-mcp-client:
+	uv run python -m vector_search.main
